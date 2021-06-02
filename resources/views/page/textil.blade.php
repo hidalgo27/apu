@@ -6,7 +6,7 @@
             <div class="p-3">
                 <a href="/"><img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto"></a>
             </div>
-            <div class="flex justify-end p-8">
+            <div class="flex justify-end p-8 invisible md:visible">
                 <a href="#" target="_blank" class="mx-2">
                     <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
                 </a>
@@ -62,18 +62,17 @@
         </div>
     </div>
 
-    <div class="py-12">
+    <div class="md:py-12">
         <div class="container mx-auto">
-            <div class="flex justify-center">
-                <div class="w-1/2 py-5 z-30">
-                    <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full rounded-lg object-cover">
+            <div class="flex flex-col md:flex-row justify-center">
+                <div class="md:w-1/2 order-2 md:order-1 md:py-5 z-30">
+                    <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full md:rounded-lg object-cover">
                 </div>
-                <div class="flex justify-end items-center w-1/2 -ml-36 shadow-lg rounded-lg border-primary hover:border-gray-50 transition duration-500">
+                <div class="flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
                     <div class="w-9/12 p-12">
                         <h2 class="font-lusitana text-2xl mb-6">Centro de Interpretación Cultural</h2>
-                        <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">El local del Centro de Interpretación Cultural Apu Antasaqa, está ubicado a una hora de la ciudad del Cusco, a 10 minutos del parque arqueológico y del templo de Chinchero. Cuenta con un ambiente acogedor de espacio amplio; con una arquitectura propia de los Andes. En dicho local nuestros visitantes podrán sentirse cómodos para apreciar  toda la manifestación cultural del arte textil. Igualmente; tendrán la opción de adquirir una infinidad de productos de calidad a base de lana de alpaca, oveja y algodón. Cabe recalcar que la lana utilizada en nuestros textiles fueron elaboradas y teñidas a base de tintes naturales al igual que la cochinilla.
-                        </p>
-                        <a href="#" class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">El local del Centro de Interpretación Cultural Apu Antasaqa, está ubicado a una hora de la ciudad del Cusco, a 10 minutos del parque arqueológico y del templo de Chinchero. Cuenta con un ambiente acogedor de espacio amplio; con una arquitectura propia de los Andes. En dicho local nuestros visitantes podrán sentirse cómodos para apreciar  toda la manifestación cultural del arte textil. Igualmente; tendrán la opción de adquirir una infinidad de productos de calidad a base de lana de alpaca, oveja y algodón. Cabe recalcar que la lana utilizada en nuestros textiles fueron elaboradas y teñidas a base de tintes naturales al igual que la cochinilla.</p>
+                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Ver detalles
                         </a>
                     </div>
@@ -84,7 +83,7 @@
 
 
     <div class="container mx-auto my-12">
-        <div class="flex mx-auto gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12">
             <div class="relative overflow-hidden">
                 <div class="p-3 border rounded">
                     <img src="{{asset('images/chicha/p1.jpg')}}" alt="" class="rounded relative bg-cover min-w-full transition duration-500 ease-in-out transform hover:-translate-x-0 hover:scale-105">
@@ -126,8 +125,8 @@
             </div>
         </div>
     </div>
-    </div>
-    <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/banner-textil.png')}})"></div>
+
+    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}})"></div>
 
 
 @endsection

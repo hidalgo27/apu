@@ -24,10 +24,10 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
 
     <!-- overlay -->
-    <div id="modal_overlay" class="hidden fixed inset-0 bg-opacity-30 h-full w-full flex justify-start items-start md:items-center pt-10 md:pt-0 z-50">
+    <div id="modal_overlay" class="hidden fixed inset-0 bg-opacity-30 h-full w-full flex justify-start items-start md:items-center md:pt-0 z-50">
 
         <!-- modal -->
-        <div id="modal" class="opacity-0 transform -translate-x-full scale-150 relative w-1/4 md:w-1/4 h-full md:h-full bg-transparent rounded transition-opacity transition-transform duration-300">
+        <div id="modal" class="opacity-0 transform -translate-x-full scale-150 relative w-10/12 md:w-1/4 h-full md:h-full bg-transparent rounded transition-opacity transition-transform duration-300">
 
             <svg
                 class="absolute inset-0 w-full h-full text-primary"

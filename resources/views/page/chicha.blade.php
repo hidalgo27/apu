@@ -6,7 +6,7 @@
             <div class="p-3">
                 <a href="/"><img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto"></a>
             </div>
-            <div class="flex justify-end p-8">
+            <div class="flex justify-end p-8 invisible md:visible">
                 <a href="#" target="_blank" class="mx-2">
                     <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
                 </a>
@@ -62,11 +62,11 @@
         </div>
     </div>
 
-    <div class="py-12">
+    <div class="md:py-12">
         <div class="container mx-auto">
 
-            <div class="flex mx-auto  px-16 gap-12 my-12">
-                <div class="w-3/5 h-full relative">
+            <div class="flex flex-col md:flex-row mx-auto  md:px-16 md:gap-12 md:my-12">
+                <div class=" md:w-3/5 h-full relative">
 
                     <div class="carousel relative shadow-2xl bg-white">
                         <div class="carousel-inner relative overflow-hidden">
@@ -75,8 +75,8 @@
                             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                                 <div class="block h-full relative w-full bg-yellow-500 text-white">
                                     <img src="{{asset('images/chicha/banner-chicha2.jpg')}}" alt="" class="h-full w-full object-cover">
-                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
-                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+
+                                    <div class="absolute top-0 bg-primary bg-opacity-50 z-30 h-full p-6 w-1/2 md:w-1/3 left-0 text-gray-50">
                                         <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
                                         <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
                                     </div>
@@ -99,8 +99,7 @@
                             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                                 <div class="block h-full w-full relative bg-yellow-500 text-white">
                                     <img src="{{asset('images/banner4.jpg')}}" alt="" class="h-full w-full object-cover">
-                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
-                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+                                    <div class="absolute top-0 bg-primary bg-opacity-50 z-30 h-full p-6 w-1/2 md:w-1/3 left-0 text-gray-50">
                                         <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
                                         <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
                                     </div>
@@ -122,8 +121,7 @@
                             <div class="carousel-item absolute opacity-0" style="height:75vh;">
                                 <div class="block h-full relative w-full bg-yellow-500 text-white">
                                     <img src="{{asset('images/chicha/banner-chicha1.jpg')}}" alt="" class="h-full w-full object-cover">
-                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
-                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+                                    <div class="absolute top-0 bg-primary bg-opacity-50 z-30 h-full p-6 w-1/2 md:w-1/3 left-0 text-gray-50">
                                         <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
                                         <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
                                     </div>
@@ -140,27 +138,14 @@
                                 </div>
                             </label>
 
-                            <!-- Add additional indicators for each slide-->
-                            {{--                            <ol class="carousel-indicators">--}}
-                            {{--                                <li class="inline-block mr-3">--}}
-                            {{--                                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-                            {{--                                </li>--}}
-                            {{--                                <li class="inline-block mr-3">--}}
-                            {{--                                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-                            {{--                                </li>--}}
-                            {{--                                <li class="inline-block mr-3">--}}
-                            {{--                                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-                            {{--                                </li>--}}
-                            {{--                            </ol>--}}
-
                         </div>
                     </div>
 
                 </div>
-                <div class="w-2/5 relative">
+                <div class=" md:w-2/5 relative">
                     <img src="{{asset('images/chicha/banner-chicha3.jpg')}}" alt="" class="h-full w-full object-cover">
-                    <div class="absolute bottom-0 left-0 bg-primary h-60 opacity-50 w-full"></div>
-                    <div class="absolute bottom-0 left-0 z-30 p-6 w-full text-gray-50">
+
+                    <div class="absolute bottom-0 h-full md:h-auto left-0 bg-primary bg-opacity-50 z-30 p-6 w-full text-gray-50">
                         <p class="mb-8">En dicha  sala, los visitantes tendrán la oportunidad de  informarse sobre proceso completo de elaboración de la chicha así también los visitantes tendrán la opción de apreciar varios instrumentos de labor agrícola del hombre andino.</p>
                         <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
                     </div>
@@ -169,7 +154,5 @@
 
         </div>
     </div>
-
-    <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
-
+    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
 @endsection

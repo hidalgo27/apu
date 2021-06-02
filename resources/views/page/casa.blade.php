@@ -6,7 +6,7 @@
             <div class="p-3">
                 <a href="/"><img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto"></a>
             </div>
-            <div class="flex justify-end p-8">
+            <div class="flex justify-end p-8 invisible md:visible">
                 <a href="#" target="_blank" class="mx-2">
                     <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
                 </a>
@@ -63,10 +63,9 @@
     </div>
 
 
-    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa4.jpg')}})"></div>
     <div class="bg-black py-12">
 
-        <div class="grid grid-cols-2 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center">
             <div class="p-16">
                 <h2 class="font-lusitana text-gray-50 text-2xl mb-6">Casa Antigua a la Usanza Ancestral de Chinchero</h2>
                 <p class="font-montserrat font-light text-gray-50 mb-6 tracking-tight leading-relaxed">En otro ambiente, el visitante podrá apreciar una pequeña casa de infraestructura antigua al estilo del Ande. El cual mantiene una arquitectura esplendida de muchos años atrás. El día de hoy, esta construcción todavía mantiene su función tradicional de ser usada como una despensa familiar. La visita a este ambiente nos enseñara como el hombre del Ande almacena con las mismas técnicas ancestrales a fin de conservar refrigerada sus productos alimentarios por un periodo largo, para tal fin es utiliza algunos utensilios y vasijas de cerámica.</p>
@@ -137,4 +136,6 @@
         {{--            </div>--}}
         {{--        </div>--}}
     </div>
+    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa4.jpg')}})"></div>
+
 @endsection
