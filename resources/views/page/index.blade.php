@@ -7,18 +7,75 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <style>
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+        #carousel-1:checked ~ .control-1,
+        #carousel-2:checked ~ .control-2,
+        #carousel-3:checked ~ .control-3,
+        #carousel-4:checked ~ .control-4,
+        #carousel-5:checked ~ .control-5{
+            display: block;
+        }
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        #carousel-1:checked
+        ~ .control-1
+        ~ .carousel-indicators
+        li:nth-child(1)
+        .carousel-bullet,
+        #carousel-2:checked
+        ~ .control-2
+        ~ .carousel-indicators
+        li:nth-child(2)
+        .carousel-bullet,
+        #carousel-3:checked
+        ~ .control-3
+        ~ .carousel-indicators
+        li:nth-child(3)
+        .carousel-bullet,
+        #carousel-4:checked
+        ~ .control-4
+        ~ .carousel-indicators
+        li:nth-child(4)
+        .carousel-bullet,
+        #carousel-5:checked
+        ~ .control-5
+        ~ .carousel-indicators
+        li:nth-child(5)
+        .carousel-bullet {
+            color: #ffb317; /*Set to match the Tailwind colour you want the active one to be */
+        }
+
+    </style>
 </head>
 <body>
 <div id="app">
+    <div class="fixed z-40 p-8">
+        <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 rounded text-gray-50 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+        </button>
+    </div>
     <header class="relative flex flex-col justify-between h-screen overflow-hidden">
         <div class="relative items-start grid grid-cols-3 justify-between z-30">
-            <div class="fixed p-8">
-                <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 rounded text-gray-50 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-                    </svg>
-                </button>
-            </div>
             <div></div>
             <div class="p-3">
                 <img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto">
@@ -65,6 +122,7 @@
 
         </div>
         <div class="bg-footer-texture bg-repeat-x absolute h-6 bg-12 bottom-0 w-full z-30"></div>
+
     </header>
     <!-- Alpine Js -->
 
@@ -72,7 +130,7 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
 
     <!-- overlay -->
-    <div id="modal_overlay" class="hidden fixed inset-0 bg-opacity-30 h-full w-full flex justify-start items-start md:items-center pt-10 md:pt-0 z-30">
+    <div id="modal_overlay" class="hidden fixed inset-0 bg-opacity-30 h-full w-full flex justify-start items-start md:items-center pt-10 md:pt-0 z-50">
 
         <!-- modal -->
         <div id="modal" class="opacity-0 transform -translate-x-full scale-150 relative w-1/4 md:w-1/4 h-full md:h-full bg-transparent rounded transition-opacity transition-transform duration-300">
@@ -111,7 +169,7 @@
     </div>
 
 
-    <div class="bg-black text-gray-50 py-12">
+    <div class="bg-black z-30 text-gray-50 py-12">
 
         <h2 class="font-lusitana text-5xl text-center mb-6">Vara Pumayalli</h2>
 
@@ -135,38 +193,233 @@
                 </div>
                 <div class="flex justify-end items-center w-1/2 -ml-36 shadow-lg rounded-lg border-primary hover:border-gray-50 transition duration-500">
                     <div class="w-9/12 p-12">
-                        <h2 class="font-lusitana text-2xl mb-6">Textileria</h2>
-                        <p class="font-montserrat font-light tracking-tight leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis culpa magni molestiae nisi vero. Ad, aspernatur cupiditate doloribus, dolorum eligendi error iusto nam nulla perspiciatis saepe sit unde voluptates.</p>
+                        <h2 class="font-lusitana text-2xl mb-6">Centro de Interpretación Cultural</h2>
+                        <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">El local del Centro de Interpretación Cultural Apu Antasaqa, está ubicado a una hora de la ciudad del Cusco, a 10 minutos del parque arqueológico y del templo de Chinchero. Cuenta con un ambiente acogedor de espacio amplio; con una arquitectura propia de los Andes. En dicho local nuestros visitantes podrán sentirse cómodos para apreciar  toda la manifestación cultural del arte textil. Igualmente; tendrán la opción de adquirir una infinidad de productos de calidad a base de lana de alpaca, oveja y algodón. Cabe recalcar que la lana utilizada en nuestros textiles fueron elaboradas y teñidas a base de tintes naturales al igual que la cochinilla.</p>
+                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            Ver detalles
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-fixed h-128" style="background-image: url({{asset('images/banner3.jpg')}})"></div>
+    <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/banner-textil.png')}})"></div>
 
 
     <div class="py-12">
         <div class="container mx-auto">
+
             <div class="flex mx-auto  px-16 gap-12 my-12">
                 <div class="w-3/5 h-full relative">
-                    <img src="{{asset('images/interpretacion.jpg')}}" alt="" class="h-full w-full object-cover">
-                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/4 left-0"></div>
-                    <div class="absolute top-0 z-30 h-full p-6 w-1/4 left-0">
-                        <h2 class="text-white font-lusitana font-bold text-2xl">hola</h2>
+
+                    <div class="carousel relative shadow-2xl bg-white">
+                        <div class="carousel-inner relative overflow-hidden">
+                            <!--Slide 1-->
+                            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                            <div class="carousel-item absolute opacity-0" style="height:75vh;">
+                                <div class="block h-full relative w-full bg-yellow-500 text-white">
+                                    <img src="{{asset('images/chicha/banner-chicha2.jpg')}}" alt="" class="h-full w-full object-cover">
+                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
+                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+                                        <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
+                                        <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <label for="carousel-3" class="prev control-1  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
+                                    <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                        &#x276E;
+                                    </div>
+                            </label>
+                            <label for="carousel-2" class="next control-1 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276F;
+                                </div>
+                            </label>
+
+                            <!--Slide 2-->
+                            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                            <div class="carousel-item absolute opacity-0" style="height:75vh;">
+                                <div class="block h-full w-full relative bg-yellow-500 text-white">
+                                    <img src="{{asset('images/banner4.jpg')}}" alt="" class="h-full w-full object-cover">
+                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
+                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+                                        <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
+                                        <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="carousel-1" class="prev control-2  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276E;
+                                </div>
+                            </label>
+                            <label for="carousel-3" class="next control-2 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276F;
+                                </div>
+                            </label>
+
+                            <!--Slide 3-->
+                            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                            <div class="carousel-item absolute opacity-0" style="height:75vh;">
+                                <div class="block h-full relative w-full bg-yellow-500 text-white">
+                                    <img src="{{asset('images/chicha/banner-chicha1.jpg')}}" alt="" class="h-full w-full object-cover">
+                                    <div class="absolute top-0 bg-primary opacity-50 h-full w-1/3 left-0"></div>
+                                    <div class="absolute top-0 z-30 h-full p-6 w-1/3 left-0 text-gray-50">
+                                        <h2 class="font-lusitana font-bold text-2xl mb-6">Sala de Exposición Cultural </h2>
+                                        <p class="">La Sala de Exposición Cultural, es un pequeño museo compuesta por todo los utensilios de elaboración de la chicha, la bebida ancestral de los Inkas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="carousel-2" class="prev control-3  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276E;
+                                </div>
+                            </label>
+                            <label for="carousel-1" class="next control-3 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276F;
+                                </div>
+                            </label>
+
+                            <!-- Add additional indicators for each slide-->
+{{--                            <ol class="carousel-indicators">--}}
+{{--                                <li class="inline-block mr-3">--}}
+{{--                                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+{{--                                </li>--}}
+{{--                                <li class="inline-block mr-3">--}}
+{{--                                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+{{--                                </li>--}}
+{{--                                <li class="inline-block mr-3">--}}
+{{--                                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+{{--                                </li>--}}
+{{--                            </ol>--}}
+
+                        </div>
                     </div>
+
                 </div>
                 <div class="w-2/5 relative">
-                    <img src="{{asset('images/interpretacion.jpg')}}" alt="" class="h-full w-full object-cover">
-                    <div class="absolute bottom-0 left-0 bg-primary h-40 opacity-50 w-full"></div>
-                    <div class="absolute bottom-0 left-0 z-30 h-40 p-6 w-full">
-                        <h2 class="text-white font-lusitana font-bold text-2xl">hola</h2>
+                    <img src="{{asset('images/chicha/banner-chicha3.jpg')}}" alt="" class="h-full w-full object-cover">
+                    <div class="absolute bottom-0 left-0 bg-primary h-60 opacity-50 w-full"></div>
+                    <div class="absolute bottom-0 left-0 z-30 p-6 w-full text-gray-50">
+                        <p class="mb-8">En dicha  sala, los visitantes tendrán la oportunidad de  informarse sobre proceso completo de elaboración de la chicha así también los visitantes tendrán la opción de apreciar varios instrumentos de labor agrícola del hombre andino.</p>
+                        <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
+
+    <div class="bg-black py-12">
+
+
+
+        <div class="grid grid-cols-2 items-center">
+            <div class="p-16">
+                <h2 class="font-lusitana text-gray-50 text-2xl mb-6">Casa Antigua a la Usanza Ancestral de Chinchero</h2>
+                <p class="font-montserrat font-light text-gray-50 mb-6 tracking-tight leading-relaxed">En otro ambiente, el visitante podrá apreciar una pequeña casa de infraestructura antigua al estilo del Ande. El cual mantiene una arquitectura esplendida de muchos años atrás. El día de hoy, esta construcción todavía mantiene su función tradicional de ser usada como una despensa familiar. La visita a este ambiente nos enseñara como el hombre del Ande almacena con las mismas técnicas ancestrales a fin de conservar refrigerada sus productos alimentarios por un periodo largo, para tal fin es utiliza algunos utensilios y vasijas de cerámica.</p>
+                <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
+            </div>
+            <div class="carousel relative shadow-2xl bg-white">
+                <div class="carousel-inner relative overflow-hidden">
+                    <!--Slide 1-->
+                    <input class="carousel-open" type="radio" id="carousel-4" name="carousel2" aria-hidden="true" hidden="" checked="checked">
+                    <div class="carousel-item absolute opacity-0" style="height:75vh;">
+                        <div class="block h-full relative w-full bg-yellow-500 text-white">
+                            <img src="{{asset('images/casa/casa3.JPG')}}" alt="" class="h-full w-full object-cover">
+                        </div>
+                    </div>
+                    <label for="carousel-5" class="prev control-4  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
+                        <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                            &#x276E;
+                        </div>
+                    </label>
+                    <label for="carousel-5" class="next control-4 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
+                        <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                            &#x276F;
+                        </div>
+                    </label>
+
+                    <!--Slide 2-->
+                    <input class="carousel-open" type="radio" id="carousel-5" name="carousel2" aria-hidden="true" hidden="">
+                    <div class="carousel-item absolute opacity-0" style="height:75vh;">
+                        <div class="block h-full w-full relative bg-yellow-500 text-white">
+                            <img src="{{asset('images/casa/casa2.jpg')}}" alt="" class="h-full w-full object-cover">
+                        </div>
+                    </div>
+                    <label for="carousel-4" class="prev control-5  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
+                        <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                            &#x276E;
+                        </div>
+                    </label>
+                    <label for="carousel-4" class="next control-5 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
+                        <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                            &#x276F;
+                        </div>
+                    </label>
+
+
+                    <!-- Add additional indicators for each slide-->
+                    {{--                            <ol class="carousel-indicators">--}}
+                    {{--                                <li class="inline-block mr-3">--}}
+                    {{--                                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                    {{--                                </li>--}}
+                    {{--                                <li class="inline-block mr-3">--}}
+                    {{--                                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                    {{--                                </li>--}}
+                    {{--                                <li class="inline-block mr-3">--}}
+                    {{--                                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                    {{--                                </li>--}}
+                    {{--                            </ol>--}}
+
+                </div>
+            </div>
+        </div>
+
+{{--        <div class="grid grid-cols-2 items-center">--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('images/casa/casa1.JPG')}}" alt="" class="w-full">--}}
+{{--            </div>--}}
+{{--            <div>--}}
+{{--                <img src="{{asset('images/casa/casa2.jpg')}}" alt="" class="w-full">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+    </div>
+    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa1.JPG')}})"></div>
+
+    <div class="py-12">
+        <div class="container mx-auto">
+            <div class="flex justify-center">
+                <div class="w-1/2 py-5 z-30">
+                    <img src="{{asset('images/hospedaje/hospedaje1.jpg')}}" alt="" class="h-full w-full rounded-lg object-cover">
+                </div>
+                <div class="flex justify-end items-center w-1/2 -ml-36 shadow-lg rounded-lg border-primary hover:border-gray-50 transition duration-500">
+                    <div class="w-9/12 p-12">
+                        <h2 class="font-lusitana text-2xl mb-6">Hospedaje Rural</h2>
+                        <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">Nuestro local cuenta con dos habitaciones acondicionadas para hospedaje, en un  lugar de ambiente agradable y tranquilo lejos del ruido de la ciudad. Dicho alojamiento presenta un estilo andino contemporáneo. Es ideal para personas que desean experimentar el Perú profundo en un ambiente rural. Check in 01:00 pm. Check out 09.00 am.</p>
+                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            Ver detalles
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/hospedaje/hospedaje2.jpg')}})"></div>
+<footer class="relative bg-primary pt-6">
+    <div class="bg-footer-texture bg-repeat-x h-6 bg-12 top-0 w-full z-30"></div>
+    <div class="container mx-auto text-center text-gray-50 py-3">
+        Copyright Nebula 2021 All Rights Reserved
+    </div>
+</footer>
 </div>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
