@@ -333,7 +333,7 @@
                     <input class="carousel-open" type="radio" id="carousel-4" name="carousel2" aria-hidden="true" hidden="" checked="checked">
                     <div class="carousel-item absolute opacity-0" style="height:75vh;">
                         <div class="block h-full relative w-full bg-yellow-500 text-white">
-                            <img src="{{asset('images/casa/casa3.JPG')}}" alt="" class="h-full w-full object-cover">
+                            <img src="{{asset('images/casa/casa3.jpg')}}" alt="" class="h-full w-full object-cover">
                         </div>
                     </div>
                     <label for="carousel-5" class="prev control-4  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
