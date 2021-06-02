@@ -1,84 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
-    <style>
-        .carousel-open:checked + .carousel-item {
-            position: static;
-            opacity: 100;
-        }
-
-        .carousel-item {
-            -webkit-transition: opacity 0.6s ease-out;
-            transition: opacity 0.6s ease-out;
-        }
-        #carousel-1:checked ~ .control-1,
-        #carousel-2:checked ~ .control-2,
-        #carousel-3:checked ~ .control-3,
-        #carousel-4:checked ~ .control-4,
-        #carousel-5:checked ~ .control-5{
-            display: block;
-        }
-        .carousel-indicators {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-        }
-        #carousel-1:checked
-        ~ .control-1
-        ~ .carousel-indicators
-        li:nth-child(1)
-        .carousel-bullet,
-        #carousel-2:checked
-        ~ .control-2
-        ~ .carousel-indicators
-        li:nth-child(2)
-        .carousel-bullet,
-        #carousel-3:checked
-        ~ .control-3
-        ~ .carousel-indicators
-        li:nth-child(3)
-        .carousel-bullet,
-        #carousel-4:checked
-        ~ .control-4
-        ~ .carousel-indicators
-        li:nth-child(4)
-        .carousel-bullet,
-        #carousel-5:checked
-        ~ .control-5
-        ~ .carousel-indicators
-        li:nth-child(5)
-        .carousel-bullet {
-            color: #ffb317; /*Set to match the Tailwind colour you want the active one to be */
-        }
-
-    </style>
-</head>
-<body>
-<div id="app">
-    <div class="fixed z-40 p-8">
-        <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 rounded text-gray-50 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-            </svg>
-        </button>
-    </div>
+@extends('layouts.page.app')
+@section('content')
     <header class="relative flex flex-col justify-between h-screen overflow-hidden">
         <div class="relative items-start grid grid-cols-3 justify-between z-30">
             <div></div>
             <div class="p-3">
-                <img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto">
+                <a href="/"><img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto"></a>
             </div>
             <div class="flex justify-end p-8">
                 <a href="#" target="_blank" class="mx-2">
@@ -111,76 +37,31 @@
             </a>
         </div>
         <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
-{{--            <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4" type="video/mp4" />Your browser does not support the video tag.--}}
+            {{--            <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4" type="video/mp4" />Your browser does not support the video tag.--}}
             <source src="{{asset('media/intro.mp4')}}" type="video/mp4" />Your browser does not support the video tag.
         </video>
-{{--        <div class="vimeo-wrapper absolute z-10 w-auto min-w-full min-h-full max-w-none">--}}
-{{--            <iframe src="https://player.vimeo.com/video/361847703?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1"--}}
-{{--                    frameborder="0"  class="absolute z-10 w-auto min-w-full min-h-full max-w-none"></iframe>--}}
-{{--        </div>--}}
+        {{--        <div class="vimeo-wrapper absolute z-10 w-auto min-w-full min-h-full max-w-none">--}}
+        {{--            <iframe src="https://player.vimeo.com/video/361847703?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1"--}}
+        {{--                    frameborder="0"  class="absolute z-10 w-auto min-w-full min-h-full max-w-none"></iframe>--}}
+        {{--        </div>--}}
         <div class="absolute z-10 w-auto min-w-full min-h-full bg-gray-900 max-w-none opacity-50">
 
         </div>
         <div class="bg-footer-texture bg-repeat-x absolute h-6 bg-12 bottom-0 w-full z-30"></div>
 
     </header>
-    <!-- Alpine Js -->
-
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <!-- This example requires Tailwind CSS v2.0+ -->
-
-    <!-- overlay -->
-    <div id="modal_overlay" class="hidden fixed inset-0 bg-opacity-30 h-full w-full flex justify-start items-start md:items-center pt-10 md:pt-0 z-50">
-
-        <!-- modal -->
-        <div id="modal" class="opacity-0 transform -translate-x-full scale-150 relative w-1/4 md:w-1/4 h-full md:h-full bg-transparent rounded transition-opacity transition-transform duration-300">
-
-            <svg
-                class="absolute inset-0 w-full h-full text-primary"
-                style="filter: drop-shadow(10px 0 10px #00000030)"
-                preserveAspectRatio="none"
-                viewBox="0 0 309 800"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z"
-                />
-            </svg>
-            <!-- button close -->
-            <button
-                onclick="openModal(false)"
-                class="absolute z-30 top-5 -right-8 bg-primary hover:bg-primary text-2xl w-10 h-10 rounded-full focus:outline-none text-gray-50">
-                &cross;
-            </button>
-
-            <!-- header -->
-
-
-            <!-- body -->
-            <div class="w-full p-3 text-gray relative z-20">
-                <img src="{{asset('images/logo-apu.png')}}" alt="">
-            </div>
-
-            {{--            <!-- footer -->--}}
-            {{--            <div class="absolute bottom-0 left-0 px-4 py-3 border-t border-gray-200 w-full flex justify-end items-center gap-3">--}}
-
-        </div>
-    </div>
-
-
     <div class="bg-black z-30 text-gray-50 py-12">
 
         <h2 class="font-lusitana text-5xl text-center mb-6">Vara Pumayalli</h2>
 
-            <div class="grid grid-cols-2 items-center">
-                <div class="p-16">
-                    <p class="font-montserrat font-light tracking-tight leading-relaxed">heredero de un conocimiento amplio del arte textil; adquirido de padres a hijos, los cuales fueron profundizados en conocimiento a medida que pasaban los años en especial en los años 80 y 90. Ya con una amplia trayectoria en el arte textil de Chinchero; en los inicios del milenio, la familia Vara Pumayalli decide organizarse con mayor formalidad y toman la iniciativa de trabajar de manera organizada, con el fin de consolidar la preservación de la originalidad de este arte milenario, tomando en cuenta el diseño iconográfico así como la combinación de los colores originarios de Chinchero que son herencia invalorable de nuestros antepasados</p>
-                </div>
-                <div>
-                    <img src="{{asset('images/apu3.jpg')}}" alt="" class="w-full">
-                </div>
+        <div class="grid grid-cols-2 items-center">
+            <div class="p-16">
+                <p class="font-montserrat font-light tracking-tight leading-relaxed">heredero de un conocimiento amplio del arte textil; adquirido de padres a hijos, los cuales fueron profundizados en conocimiento a medida que pasaban los años en especial en los años 80 y 90. Ya con una amplia trayectoria en el arte textil de Chinchero; en los inicios del milenio, la familia Vara Pumayalli decide organizarse con mayor formalidad y toman la iniciativa de trabajar de manera organizada, con el fin de consolidar la preservación de la originalidad de este arte milenario, tomando en cuenta el diseño iconográfico así como la combinación de los colores originarios de Chinchero que son herencia invalorable de nuestros antepasados</p>
             </div>
+            <div>
+                <img src="{{asset('images/apu3.jpg')}}" alt="" class="w-full">
+            </div>
+        </div>
 
     </div>
 
@@ -229,9 +110,9 @@
                                 </div>
                             </div>
                             <label for="carousel-3" class="prev control-1  absolute right-0 bottom-0 cursor-pointer hidden bg-white opacity-70 z-10 mr-16 border-r border-gray-400">
-                                    <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
-                                        &#x276E;
-                                    </div>
+                                <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
+                                    &#x276E;
+                                </div>
                             </label>
                             <label for="carousel-2" class="next control-1 absolute z-10 hidden bottom-0 right-0 bg-white opacity-70 w-16 h-16 cursor-pointer">
                                 <div class="w-16 h-16 text-center align-bottom my-auto flex justify-center items-center">
@@ -286,17 +167,17 @@
                             </label>
 
                             <!-- Add additional indicators for each slide-->
-{{--                            <ol class="carousel-indicators">--}}
-{{--                                <li class="inline-block mr-3">--}}
-{{--                                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-{{--                                </li>--}}
-{{--                                <li class="inline-block mr-3">--}}
-{{--                                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-{{--                                </li>--}}
-{{--                                <li class="inline-block mr-3">--}}
-{{--                                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
-{{--                                </li>--}}
-{{--                            </ol>--}}
+                            {{--                            <ol class="carousel-indicators">--}}
+                            {{--                                <li class="inline-block mr-3">--}}
+                            {{--                                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                            {{--                                </li>--}}
+                            {{--                                <li class="inline-block mr-3">--}}
+                            {{--                                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                            {{--                                </li>--}}
+                            {{--                                <li class="inline-block mr-3">--}}
+                            {{--                                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>--}}
+                            {{--                                </li>--}}
+                            {{--                            </ol>--}}
 
                         </div>
                     </div>
@@ -318,8 +199,6 @@
     <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
 
     <div class="bg-black py-12">
-
-
 
         <div class="grid grid-cols-2 items-center">
             <div class="p-16">
@@ -383,14 +262,14 @@
             </div>
         </div>
 
-{{--        <div class="grid grid-cols-2 items-center">--}}
-{{--            <div>--}}
-{{--                <img src="{{asset('images/casa/casa4.jpg')}}" alt="" class="w-full">--}}
-{{--            </div>--}}
-{{--            <div>--}}
-{{--                <img src="{{asset('images/casa/casa2.jpg')}}" alt="" class="w-full">--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        {{--        <div class="grid grid-cols-2 items-center">--}}
+        {{--            <div>--}}
+        {{--                <img src="{{asset('images/casa/casa4.jpg')}}" alt="" class="w-full">--}}
+        {{--            </div>--}}
+        {{--            <div>--}}
+        {{--                <img src="{{asset('images/casa/casa2.jpg')}}" alt="" class="w-full">--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
     </div>
     <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa4.jpg')}})"></div>
 
@@ -414,41 +293,4 @@
     </div>
 
     <div class="bg-fixed bg-cover h-128" style="background-image: url({{asset('images/hospedaje/hospedaje2.jpg')}})"></div>
-<footer class="relative bg-primary pt-6">
-    <div class="bg-footer-texture bg-repeat-x h-6 bg-12 top-0 w-full z-30"></div>
-    <div class="container mx-auto text-center text-gray-50 py-3">
-        Copyright Nebula 2021 All Rights Reserved
-    </div>
-</footer>
-</div>
-<script src="{{asset('js/app.js')}}"></script>
-<script src="{{asset('js/plugins.js')}}"></script>
-<script>
-    feather.replace();
-    const modal_overlay = document.querySelector('#modal_overlay');
-    const modal = document.querySelector('#modal');
-
-    function openModal (value){
-        const modalCl = modal.classList
-        const overlayCl = modal_overlay
-
-        if(value){
-            overlayCl.classList.remove('hidden')
-            setTimeout(() => {
-                modalCl.remove('opacity-0')
-                modalCl.remove('-translate-x-full')
-                modalCl.remove('scale-150')
-            }, 100);
-        } else {
-            modalCl.add('-translate-x-full')
-            setTimeout(() => {
-                modalCl.add('opacity-0')
-                modalCl.add('scale-150')
-            }, 100);
-            setTimeout(() => overlayCl.classList.add('hidden'), 600);
-        }
-    }
-    openModal(false);
-</script>
-</body>
-</html>
+@endsection

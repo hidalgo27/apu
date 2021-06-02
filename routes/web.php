@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/centro-de-interpretacion-cultural', [HomeController::class, 'textil'])->name('textil');
+Route::get('/sala-de-exposicion-cultural', [HomeController::class, 'chicha'])->name('chicha');
+Route::get('/casa-antigua-a-la-usanza-ancestral-de-chinchero', [HomeController::class, 'casa'])->name('casa');
+Route::get('/hospedaje-rural', [HomeController::class, 'hospedaje'])->name('hospedaje');

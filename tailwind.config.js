@@ -14,12 +14,13 @@ module.exports = {
           red: colors.rose,
           pink: colors.fuchsia,
           primary: '#004b7c',
+          secondary: '#8a0910',
           black: '#000000',
           white: '#ffffff',
 
       },
       fontFamily: {
-          sans: ['Graphik', 'sans-serif'],
+          sans: ['Montserrat', 'sans-serif'],
           serif: ['Merriweather', 'serif'],
           cinzel: ['Cinzel', 'serif'],
           montserrat: ['Montserrat', 'serif'],
