@@ -85,7 +85,7 @@
         </div>
     </div>
 
-    <div class="bg-fixed bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}}); -webkit-background-size: auto 42rem; -webkit-background-size: auto 42rem"></div>
+    <div class="bg-fixed bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}});"></div>
 
 
     <div class="md:py-12">
