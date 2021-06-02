@@ -126,7 +126,7 @@
         </div>
     </div>
 
-    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}})"></div>
+    <div class="bg-fixed md:bg-cover hidden md:block bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}});"></div>
 
 
 @endsection
