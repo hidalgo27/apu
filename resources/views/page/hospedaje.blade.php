@@ -72,7 +72,7 @@
                     <div class="w-9/12 p-12">
                         <h2 class="font-lusitana text-2xl mb-6">Hospedaje Rural</h2>
                         <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">Nuestro local cuenta con dos habitaciones acondicionadas para hospedaje, en un  lugar de ambiente agradable y tranquilo lejos del ruido de la ciudad. Dicho alojamiento presenta un estilo andino contemporáneo. Es ideal para personas que desean experimentar el Perú profundo en un ambiente rural. Check in 01:00 pm. Check out 09.00 am.</p>
-                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Ver detalles
                         </a>
                     </div>
