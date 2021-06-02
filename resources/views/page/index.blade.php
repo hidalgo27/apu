@@ -85,7 +85,7 @@
         </div>
     </div>
 
-    <div class="bg-fixed md:bg-cover bg-center h-128 bg-no-repeat" style="background-image: url({{asset('images/banner-textil.png')}});"></div>
+    <div class="bg-fixed md:bg-cover bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}});"></div>
 
 
     <div class="md:py-12">
@@ -194,7 +194,7 @@
         </div>
     </div>
 
-    <div class="bg-fixed md:bg-cover bg-center h-128 bg-no-repeat" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
+    <div class="bg-fixed md:bg-cover bg-center h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
 
     <div class="bg-black py-12">
 
@@ -269,7 +269,7 @@
         {{--            </div>--}}
         {{--        </div>--}}
     </div>
-    <div class="bg-fixed md:bg-cover bg-center h-128 bg-no-repeat" style="background-image: url({{asset('images/casa/casa4.jpg')}})"></div>
+    <div class="bg-fixed md:bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa4.jpg')}})"></div>
 
     <div class="md:py-12">
         <div class="container mx-auto">
@@ -290,5 +290,5 @@
         </div>
     </div>
 
-    <div class="bg-fixed md:bg-cover bg-center h-128 bg-no-repeat" style="background-image: url({{asset('images/hospedaje/hospedaje2.jpg')}})"></div>
+    <div class="bg-fixed md:bg-cover bg-center h-128" style="background-image: url({{asset('images/hospedaje/hospedaje2.jpg')}})"></div>
 @endsection
