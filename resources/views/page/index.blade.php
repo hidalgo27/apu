@@ -385,14 +385,14 @@
 
 {{--        <div class="grid grid-cols-2 items-center">--}}
 {{--            <div>--}}
-{{--                <img src="{{asset('images/casa/casa1.JPG')}}" alt="" class="w-full">--}}
+{{--                <img src="{{asset('images/casa/casa1.jpg')}}" alt="" class="w-full">--}}
 {{--            </div>--}}
 {{--            <div>--}}
 {{--                <img src="{{asset('images/casa/casa2.jpg')}}" alt="" class="w-full">--}}
 {{--            </div>--}}
 {{--        </div>--}}
     </div>
-    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa1.JPG')}})"></div>
+    <div class="bg-fixed bg-cover bg-center h-128" style="background-image: url({{asset('images/casa/casa1.jpg')}})"></div>
 
     <div class="py-12">
         <div class="container mx-auto">
