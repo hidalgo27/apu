@@ -105,6 +105,38 @@
 
     @yield('content')
 
+    <section>
+        <div class="md:py-12 bg-secondary">
+                <div class="container mx-auto">
+                    <div class="flex flex-col md:flex-row justify-center">
+                        <div class="md:w-1/2 order-2 md:order-1 md:py-5 z-30">
+                            <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full md:rounded-lg object-cover">
+                        </div>
+                        <div class="bg-white flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
+                            <div class="w-9/12 p-12 text-center">
+                                <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>    
+                                <form id="form font-lusitana">
+                                    <div class="relative w-full mb-5">
+                                        <input type="text" name="tNombre" placeholder="Nombre" required class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                    </div>
+                                    <div class="relative w-full mb-5">
+                                        <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                    </div>
+                                    <div class="relative w-full mb-5">
+                                            <textarea type="text" name="tMensaje" placeholder="Mensaje" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"></textarea>
+                                        </div>
+                                    <button id="button" type="button" class="w-full p-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                        Enviar
+                                    </button>
+                                </form>  
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
     <footer class="relative bg-primary pt-6">
         <div class="bg-footer-texture bg-repeat-x h-6 bg-12 top-0 w-full z-30"></div>
         <div class="container mx-auto text-center text-gray-50 py-3">
@@ -140,6 +172,7 @@
         }
     }
     openModal(false);
+    
 </script>
 </body>
 </html>

@@ -23,3 +23,12 @@ Route::get('/centro-de-interpretacion-cultural', [HomeController::class, 'textil
 Route::get('/sala-de-exposicion-cultural', [HomeController::class, 'chicha'])->name('chicha');
 Route::get('/casa-antigua-a-la-usanza-ancestral-de-chinchero', [HomeController::class, 'casa'])->name('casa');
 Route::get('/hospedaje-rural', [HomeController::class, 'hospedaje'])->name('hospedaje');
+Route::get('/formulario', [HomeController::class, 'formulario'])->name('formulario');
+
+//
+Route::get('/email', function () {
+    return view('layouts.page.email');
+});
+Route::get('/email2', function () {
+    return view('welcome.email.emailContacto');
+});
