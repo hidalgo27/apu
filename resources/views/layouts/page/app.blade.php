@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Apu Antasaqa | Cusco</title>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
 <body>
@@ -17,6 +17,14 @@
             </svg>
         </button>
     </div>
+
+    <div class="fixed bottom-0 right-0 z-40 p-8">
+        <a href="https://api.whatsapp.com/send?phone=51958123295" target="_blank" class="animate-bounce">
+            <img src="{{asset('images/whatsapp-i.png')}}" alt="" class="w-20 animate-bounce">
+        </a>
+    </div>
+
+
 
     <!-- Alpine Js -->
 

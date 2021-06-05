@@ -34,25 +34,16 @@
 
                 <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="sm:text-center lg:text-left py-24">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-50 sm:text-5xl md:text-6xl">
+                        <h1 class="text-4xl mb-8 tracking-tight font-extrabold text-gray-50 sm:text-5xl md:text-6xl">
                             <span class="block xl:inline">Centro de </span>
                             <span class="block text-indigo-600 xl:inline">Interpretación Cultural</span>
                         </h1>
-{{--                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">--}}
-{{--                            El local del Centro de Interpretación Cultural Apu Antasaqa, está ubicado a una hora de la ciudad del Cusco, a 10 minutos del parque arqueológico y del templo de Chinchero. Cuenta con un ambiente acogedor de espacio amplio; con una arquitectura propia de los Andes. En dicho local nuestros visitantes podrán sentirse cómodos para apreciar  toda la manifestación cultural del arte textil. Igualmente; tendrán la opción de adquirir una infinidad de productos de calidad a base de lana de alpaca, oveja y algodón. Cabe recalcar que la lana utilizada en nuestros textiles fueron elaboradas y teñidas a base de tintes naturales al igual que la cochinilla.--}}
-{{--                        </p>--}}
-{{--                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">--}}
-{{--                            <div class="rounded-md shadow">--}}
-{{--                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">--}}
-{{--                                    Get started--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="mt-3 sm:mt-0 sm:ml-3">--}}
-{{--                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">--}}
-{{--                                    Live demo--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <a href="#"  class="modal-open  px-12 py-3 text-xs font-bold bg-primary text-gray-50 tracking-wider border border-primary hover:bg-primary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            Reserve Ahora
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=51958123295" target="_blank" class="ml-3 px-12 py-3 text-xs font-light tracking-wider border border-gray-50 hover:bg-gray-500 hover:bg-opacity-50 hover:text-gray-100 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            Alguna Duda?
+                        </a>
                     </div>
                 </main>
             </div>
@@ -72,9 +63,6 @@
                     <div class="w-9/12 p-12">
                         <h2 class="font-lusitana text-2xl mb-6">Centro de Interpretación Cultural</h2>
                         <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">El local del Centro de Interpretación Cultural Apu Antasaqa, está ubicado a una hora de la ciudad del Cusco, a 10 minutos del parque arqueológico y del templo de Chinchero. Cuenta con un ambiente acogedor de espacio amplio; con una arquitectura propia de los Andes. En dicho local nuestros visitantes podrán sentirse cómodos para apreciar  toda la manifestación cultural del arte textil. Igualmente; tendrán la opción de adquirir una infinidad de productos de calidad a base de lana de alpaca, oveja y algodón. Cabe recalcar que la lana utilizada en nuestros textiles fueron elaboradas y teñidas a base de tintes naturales al igual que la cochinilla.</p>
-                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
-                            Ver detalles
-                        </a>
                     </div>
                 </div>
             </div>
