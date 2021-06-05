@@ -7,6 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <style>
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
@@ -114,6 +123,7 @@
 </div>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
+@stack('scripts')
 <script>
     feather.replace();
     const modal_overlay = document.querySelector('#modal_overlay');
@@ -140,6 +150,8 @@
         }
     }
     openModal(false);
+
+
 </script>
 </body>
 </html>
