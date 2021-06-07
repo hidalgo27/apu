@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
@@ -11,7 +15,8 @@ class HomeController extends Controller
         return view('page.index');
     }
     public function textil(){
-        return view('page.textil');
+        $collection=collect([['Barbijo inca','images/chicha/p1.jpg'],['Barbijo inca2','images/chicha/p2.jpg'],['Barbijo inca3','images/chicha/p3.jpg']]);
+        return view('page.textil', compact('collection'));
     }
     public function chicha(){
         return view('page.chicha');
@@ -33,12 +38,12 @@ class HomeController extends Controller
         $url2=explode('https://nebulaperu.com/',$url);    
         $url3=str_replace('-', ' ', $url2[1]);
         try {
-            Mail::send(['html' => 'email.messageClient'], ['nombre' => $nombre],
+            Mail::send(['html' => 'email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
                     ->subject('Nebula')
                     ->from('info@nebulaperu.com', 'APU');
             });
-            Mail::send(['html' => 'email.messageContact'], [
+            Mail::send(['html' => 'email.emailContacto'], [
                 'nombre' => $nombre,
                 'email' => $email,
                 'url' =>$url3,],
@@ -53,28 +58,29 @@ class HomeController extends Controller
         }
     }
     public function contactForm(Request $request ){
-        $from = 'info@nebulaperu.com';
+        $from = 'tania.vanessa609@gmail.com';
         $nombre = $request->tNombre;
         $email = $request->tEmail;
         $mensaje=$request->tMensaje;
         $url=url()->previous();
-        $url2=explode('https://nebulaperu.com/',$url);    
+        $url2=explode('http://127.0.0.1:8000/',$url);    
         $url3=str_replace('-', ' ', $url2[1]);
         try {
-            Mail::send(['html' => 'email.messageClient'], ['nombre' => $nombre],
+            Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
                     ->subject('Nebula')
-                    ->from('info@nebulaperu.com', 'APU');
+                    ->from('tania.vanessa609@gmail.com', 'APU');
             });
-            Mail::send(['html' => 'email.messageContact'], [
+            Mail::send(['html' => 'page.email.emailContacto'], [
                 'nombre' => $nombre,
                 'email' => $email,
-                'url' =>$url3,],
+                'url' =>$url3,
+                'mensaje' => $mensaje,],
                 function ($messaje) use ($from) { $messaje->to($from, 'APU')
                     ->subject('APU - Formulario de Contacto')
-                    ->from('info@nebulaperu.com', 'APU');
+                    ->from('tania.vanessa609@gmail.com', 'APU');
             });
-            return Redirect::to(URL::previous())->with('status', 'Registro satisfactorio.');
+            return Redirect::to(URL::previous() . "#contacto")->with('status', 'Registro satisfactorio.');
         }
         catch (Exception $e){
             return $e;

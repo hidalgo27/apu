@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.modal {
+    transition: opacity 0.25s ease;
+}
+body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+}
 .carousel-open:checked + .carousel-item {
     position: static;
     opacity: 100;

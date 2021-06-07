@@ -105,36 +105,43 @@
 
     @yield('content')
 
-    <section>
+    <section id="contacto">
+        @if (session('status'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">Gracias por contactar con nosotros</strong><br>
+            <span class="block sm:inline">Su mensaje fue enviado satisfactoriamente.</span>
+        </div>
+        @endif
         <div class="md:py-12 bg-secondary">
-                <div class="container mx-auto">
-                    <div class="flex flex-col md:flex-row justify-center">
-                        <div class="md:w-1/2 order-2 md:order-1 md:py-5 z-30">
-                            <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full md:rounded-lg object-cover">
-                        </div>
-                        <div class="bg-white flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
-                            <div class="w-9/12 p-12 text-center">
-                                <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>    
-                                <form id="form font-lusitana">
-                                    <div class="relative w-full mb-5">
-                                        <input type="text" name="tNombre" placeholder="Nombre" required class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row justify-center">
+                    <div class="md:w-1/2 order-2 md:order-1 md:py-5 z-30">
+                        <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full md:rounded-lg object-cover">
+                    </div>
+                    <div class="bg-white flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
+                        <div class="w-9/12 p-12 text-center">
+                            <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>    
+                            <form id="form font-lusitana" method="POST" action="{{route('contactForm')}}">
+                                @csrf
+                                <div class="relative w-full mb-5">
+                                    <input type="text" name="tNombre" placeholder="Nombre" required class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                </div>
+                                <div class="relative w-full mb-5">
+                                    <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                </div>
+                                <div class="relative w-full mb-5">
+                                        <textarea type="text" name="tMensaje" placeholder="Mensaje" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"></textarea>
                                     </div>
-                                    <div class="relative w-full mb-5">
-                                        <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
-                                    </div>
-                                    <div class="relative w-full mb-5">
-                                            <textarea type="text" name="tMensaje" placeholder="Mensaje" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"></textarea>
-                                        </div>
-                                    <button id="button" type="button" class="w-full p-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                                        Enviar
-                                    </button>
-                                </form>  
-                            </div>
-                            
+                                <button id="button" type="submit" class="w-full p-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                    Enviar
+                                </button>
+                            </form>  
                         </div>
+                        
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <footer class="relative bg-primary pt-6">
@@ -146,6 +153,7 @@
 </div>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
+@stack('scripts')
 <script>
     feather.replace();
     const modal_overlay = document.querySelector('#modal_overlay');

@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+    const colors = require('tailwindcss/colors')
 module.exports = {
   purge: [
       './storage/framework/views/*.php',
@@ -10,7 +10,7 @@ module.exports = {
   theme: {
       colors: {
           gray: colors.coolGray,
-          blue: colors.lightBlue,
+          green: colors.green,
           red: colors.rose,
           pink: colors.fuchsia,
           primary: '#004b7c',
