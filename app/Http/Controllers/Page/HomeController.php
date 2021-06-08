@@ -30,28 +30,30 @@ class HomeController extends Controller
     public function formulario(){
         return view('page.formulario');
     }
-    public function email(Request $request ){
-        $from = 'info@nebulaperu.com';
+    public function cotizar(Request $request ){
+        $from = 'tania.vanessa609@gmail.com';
         $nombre = $request->tNombre;
         $email = $request->tEmail;
+        $producto=$request->tProducto;
         $url=url()->previous();
-        $url2=explode('https://nebulaperu.com/',$url);    
+        $url2=explode('http://127.0.0.1:8000/',$url);    
         $url3=str_replace('-', ' ', $url2[1]);
         try {
-            Mail::send(['html' => 'email.emailCliente'], ['nombre' => $nombre],
+            Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
                     ->subject('Nebula')
-                    ->from('info@nebulaperu.com', 'APU');
+                    ->from('tania.vanessa609@gmail.com', 'APU');
             });
-            Mail::send(['html' => 'email.emailContacto'], [
+            Mail::send(['html' => 'page.email.emailTextil'], [
                 'nombre' => $nombre,
                 'email' => $email,
+                'producto' =>$producto,
                 'url' =>$url3,],
                 function ($messaje) use ($from) { $messaje->to($from, 'APU')
-                    ->subject('APU - Formulario de Contacto')
-                    ->from('info@nebulaperu.com', 'APU');
+                    ->subject('APU - Formulario de Cotizar')
+                    ->from('tania.vanessa609@gmail.com', 'APU');
             });
-            return Redirect::to(URL::previous())->with('status', 'Registro satisfactorio.');
+            return Redirect::to(URL::previous() . '#cotizar')->with('status', 'Registro satisfactorio.');
         }
         catch (Exception $e){
             return $e;
@@ -86,4 +88,34 @@ class HomeController extends Controller
             return $e;
         }
     }
+    public function reservar(Request $request ){
+        $from = 'tania.vanessa609@gmail.com';
+        $nombre = $request->tNombre;
+        $email = $request->tEmail;
+        $date=date('d/m/Y', strtotime($request->tDate));
+        $url=url()->previous();
+        $url2=explode('http://127.0.0.1:8000/',$url);    
+        $url3=str_replace('-', ' ', $url2[1]);
+        try {
+            Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
+                function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
+                    ->subject('Nebula')
+                    ->from('tania.vanessa609@gmail.com', 'APU');
+            });
+            Mail::send(['html' => 'page.email.emailReserva'], [
+                'nombre' => $nombre,
+                'email' => $email,
+                'url' =>$url3,
+                'date' => $date,],
+                function ($messaje) use ($from) { $messaje->to($from, 'APU')
+                    ->subject('APU - Formulario de Reserva')
+                    ->from('tania.vanessa609@gmail.com', 'APU');
+            });
+            return Redirect::to(URL::previous())->with('status', 'Registro satisfactorio.');
+        }
+        catch (Exception $e){
+            return $e;
+        }
+    }
+    
 }

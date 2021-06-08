@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Apu Antasaqa | Cusco</title>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
 <body>
@@ -17,6 +17,14 @@
             </svg>
         </button>
     </div>
+
+    <div class="fixed bottom-0 right-0 z-40 p-8">
+        <a href="https://api.whatsapp.com/send?phone=51958123295" target="_blank" class="animate-bounce">
+            <img src="{{asset('images/whatsapp-i.png')}}" alt="" class="w-20 animate-bounce">
+        </a>
+    </div>
+
+
 
     <!-- Alpine Js -->
 
@@ -124,10 +132,10 @@
                             <form id="form font-lusitana" method="POST" action="{{route('contactForm')}}">
                                 @csrf
                                 <div class="relative w-full mb-5">
-                                    <input type="text" name="tNombre" placeholder="Nombre" required class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                    <input type="text" name="tNombre" placeholder="Nombre" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                                 </div>
                                 <div class="relative w-full mb-5">
-                                    <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
+                                    <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                                 </div>
                                 <div class="relative w-full mb-5">
                                         <textarea type="text" name="tMensaje" placeholder="Mensaje" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"></textarea>
@@ -154,6 +162,7 @@
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
 @stack('scripts')
+
 <script>
     feather.replace();
     const modal_overlay = document.querySelector('#modal_overlay');

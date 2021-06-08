@@ -81,8 +81,13 @@
         </div>
     </div>
 
-
-    <div class="container mx-auto my-12">
+    <div id="cotizar" class="container mx-auto my-12">
+        @if (session('status'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 my-3 rounded relative" role="alert">
+            <strong class="font-bold">Gracias por contactar con nosotros</strong><br>
+            <span class="block sm:inline">Su mensaje fue enviado satisfactoriamente.</span>
+        </div>
+        @endif
         <div class="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12">
             @foreach ($collection as $item)
                 <div class="relative overflow-hidden">
@@ -92,15 +97,15 @@
                     <div class="px-3 py-3 rounded shadow-lg -mt-5 m-2 bg-gray-100 relative z-30">
                         <h3 class="font- font-lusitana text-2xl mb-6">{{$item[0]}}</h3>
                         <div class="flex gap-4">
-                            <a href="#" onclick="add('modal-open{{$loop->index}}');" class="modal-open{{$loop->index}} rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            <button type="button" onclick="add('{{$loop->index}}');" id="modal-open{{$loop->index}}" class="rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                                 Cotizar Ahora
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
-
-                <div class="modal opacity-0 pointer-events-none fixed w-full h-full z-40 top-0 left-0 flex items-center justify-center">
-                    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+            
+                <div id="modal{{$loop->index}}" class="opacity-0 pointer-events-none fixed w-full h-full z-40 top-0 left-0 flex items-center justify-center">
+                    <div class="modal-overlay{{$loop->index}} absolute w-full h-full bg-gray-900 opacity-50"></div>
             
                     <div class="modal-container bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
             
@@ -111,47 +116,36 @@
                             <span class="text-sm">(Esc)</span>
                         </div>
             
-                    <div class="modal-content py-4 text-left px-6">
-                        <!--Title-->
-                        <div class="flex justify-between items-center pb-3">
-                            <p class="text-2xl font-bold">Ejemplo modal {{$item[0]}}</p>
-                            <div class="modal-close cursor-pointer z-50">
-                                <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                                </svg>
-                            </div>
-                        </div>
-        
-                        <!--Body-->
-                        <form id="form font-lusitana">
-                            <div class="relative w-full mb-5">
-                                <input type="text" name="tNombre" placeholder="Nombre" required class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
-                            </div>
-                            <div class="relative w-full mb-5">
-                                <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg"/>
-                            </div> 
-        
-                        <!--Footer-->
-                            <div class="grid grid-cols-2 flex justify-end pt-2 text-center">
-                                <div>
-                                    <button type="submit" class="px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                                        Enviar
-                                    </button>
+                        <div class="modal-content py-4 text-left px-6">
+                            <!--Title-->
+                            <div class="flex justify-between items-center pb-3">
+                                <p class="text-2xl font-bold">Contizar {{$item[0]}}</p>
+                                <div class="modal-close cursor-pointer z-50">
+                                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                    </svg>
                                 </div>
-                            
-                                <div>
-                                    <button class="modal-close rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
-                                        Cerrar
-                                    </button>
-                                </div>                      
-                            </div>   
-                        </form> 
-        
+                            </div>
+                            <form id="form font-lusitana" method="POST" action="{{route('cotizar')}}">
+                                @csrf
+                                <input type="hidden" name="tProducto" value="{{$item[0]}}">
+                                <div class="relative w-full mb-5">
+                                    <input type="text" name="tNombre" placeholder="Nombre" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
+                                </div>
+                                <div class="relative w-full mb-5">
+                                    <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
+                                </div> 
+                                <div class="pb-3 text-center">
+                                    <button type="submit" class="modal-close rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                        Enviar
+                                    </button>     
+                                </div>
+                            </form>
+            
+                        </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
-            
+                @endforeach
         </div>
     </div>
 
@@ -164,46 +158,37 @@
 
     @push('scripts')
         <script>
-            function add (id){
-                var n='.'+id
-                var openmodal = document.querySelectorAll('.modal-open2')
+            function add(id){
+                var openmodal = document.querySelectorAll('#modal-open'+id)
                 for (var i = 0; i < openmodal.length; i++) {
-                    openmodal[i].addEventListener('click', function(event){
-                        event.preventDefault()
-                        toggleModal()
-                    })
+                        toggleModal(id)
                 }
+            
+                const overlay = document.querySelector('#modal-overlay'+id)
+                toggleModal(id)
+
+                var closemodal = document.querySelectorAll('.modal-close')
+                for (var i = 0; i < closemodal.length; i++) {
+                    toggleModal(id)
+                }
+
+                document.onkeydown = function(evt) {
+                    evt = evt || window.event
+                    var isEscape = false
+                    if ("key" in evt) {
+                        isEscape = (evt.key === "Escape" || evt.key === "Esc")
+                    } else {
+                        isEscape = (evt.keyCode === 27)
+                    }
+                    if (isEscape && document.body.classList.contains('modal-active')) {
+                        toggleModal(id)
+                    }
+                };
+
             }
-            add()
-            
-            
-            
-
-            const overlay = document.querySelector('.modal-overlay')
-            overlay.addEventListener('click', toggleModal)
-
-            var closemodal = document.querySelectorAll('.modal-close')
-            for (var i = 0; i < closemodal.length; i++) {
-                closemodal[i].addEventListener('click', toggleModal)
-            }
-
-            document.onkeydown = function(evt) {
-                evt = evt || window.event
-                var isEscape = false
-                if ("key" in evt) {
-                    isEscape = (evt.key === "Escape" || evt.key === "Esc")
-                } else {
-                    isEscape = (evt.keyCode === 27)
-                }
-                if (isEscape && document.body.classList.contains('modal-active')) {
-                    toggleModal()
-                }
-            };
-
-
-            function toggleModal () {
+            function toggleModal (id) {
                 const body = document.querySelector('body')
-                const modal = document.querySelector('.modal')
+                const modal = document.querySelector('#modal'+id)
                 modal.classList.toggle('opacity-0')
                 modal.classList.toggle('pointer-events-none')
                 body.classList.toggle('modal-active')

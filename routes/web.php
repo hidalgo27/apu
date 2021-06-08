@@ -24,11 +24,9 @@ Route::get('/sala-de-exposicion-cultural', [HomeController::class, 'chicha'])->n
 Route::get('/casa-antigua-a-la-usanza-ancestral-de-chinchero', [HomeController::class, 'casa'])->name('casa');
 Route::get('/hospedaje-rural', [HomeController::class, 'hospedaje'])->name('hospedaje');
 Route::post('/',[HomeController::class,'contactForm'])->name('contactForm');
-
+Route::post('/reservar',[HomeController::class,'reservar'])->name('reservar');
+Route::post('/cotizar',[HomeController::class,'cotizar'])->name('cotizar');
 //
 Route::get('/email', function () {
     return view('layouts.page.email');
-});
-Route::get('/email2', function () {
-    return view('welcome.email.emailContacto');
 });
