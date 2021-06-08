@@ -11,7 +11,7 @@
 <body>
 <div id="app">
     <div class="fixed z-40 p-8">
-        <button onclick="openModal(true)" class="bg-green-500 hover:bg-green-600 rounded text-gray-50 focus:outline-none">
+        <button onclick="openModal(true)" class="rounded text-gray-50 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
             </svg>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="fixed bottom-0 right-0 z-40 p-8">
-        <a href="https://api.whatsapp.com/send?phone=51958123295" target="_blank" class="animate-bounce">
+        <a href="https://api.whatsapp.com/send?phone=51958123295" target="_blank">
             <img src="{{asset('images/whatsapp-i.png')}}" alt="" class="w-20 animate-bounce">
         </a>
     </div>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="bg-white flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
                         <div class="w-9/12 p-12 text-center">
-                            <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>    
+                            <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>
                             <form id="form font-lusitana" method="POST" action="{{route('contactForm')}}">
                                 @csrf
                                 <div class="relative w-full mb-5">
@@ -143,9 +143,9 @@
                                 <button id="button" type="submit" class="w-full p-3 mt-3 text-lg text-white transition-all duration-150 ease-linear rounded-lg shadow outline-none bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                                     Enviar
                                 </button>
-                            </form>  
+                            </form>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@
         }
     }
     openModal(false);
-    
+
 </script>
 </body>
 </html>

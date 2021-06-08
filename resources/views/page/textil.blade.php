@@ -97,25 +97,25 @@
                     <div class="px-3 py-3 rounded shadow-lg -mt-5 m-2 bg-gray-100 relative z-30">
                         <h3 class="font- font-lusitana text-2xl mb-6">{{$item[0]}}</h3>
                         <div class="flex gap-4">
-                            <button type="button" onclick="add('{{$loop->index}}');" id="modal-open{{$loop->index}}" class="rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            <button type="button" onclick="toggleModal('modal-id{{$loop->index}}')" class="rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                                 Cotizar Ahora
                             </button>
                         </div>
                     </div>
                 </div>
-            
+
                 <div id="modal{{$loop->index}}" class="opacity-0 pointer-events-none fixed w-full h-full z-40 top-0 left-0 flex items-center justify-center">
                     <div class="modal-overlay{{$loop->index}} absolute w-full h-full bg-gray-900 opacity-50"></div>
-            
+
                     <div class="modal-container bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
-            
-                        <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+
+                        <div id="modal-close{{$loop->index}}" class="modal-close{{$loop->index}} absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
                             <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                                 <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                             </svg>
                             <span class="text-sm">(Esc)</span>
                         </div>
-            
+
                         <div class="modal-content py-4 text-left px-6">
                             <!--Title-->
                             <div class="flex justify-between items-center pb-3">
@@ -134,64 +134,75 @@
                                 </div>
                                 <div class="relative w-full mb-5">
                                     <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                                </div> 
+                                </div>
                                 <div class="pb-3 text-center">
                                     <button type="submit" class="modal-close rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                                         Enviar
-                                    </button>     
+                                    </button>
                                 </div>
                             </form>
-            
+
                         </div>
                     </div>
                 </div>
-                @endforeach
+
+                <div class="hidden  overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center animated fadeIn faster" id="modal-id{{$loop->index}}">
+                    <div class="relative animated fadeIn faster w-auto my-6 mx-auto max-w-3xl">
+                        <!--content-->
+                        <div class="border-0 animated fadeIn faster rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            <!--header-->
+                            <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                <h3 class="text-3xl font-semibold">
+                                    Modal Title
+                                </h3>
+                                <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id{{$loop->index}}')">
+                                  <span class="bg-transparent h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                                    </svg>
+                                  </span>
+                                </button>
+                            </div>
+                            <!--body-->
+                            <div class="relative p-6 flex-auto">
+                                <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                    I always felt like I could do anything. That’s the main
+                                    thing people are controlled by! Thoughts- their perception
+                                    of themselves! They're slowed down by their perception of
+                                    themselves. If you're taught you can’t do anything, you
+                                    won’t do anything. I was taught I could do everything.
+                                </p>
+                            </div>
+                            <!--footer-->
+                            <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id{{$loop->index}}')">
+                                    Close
+                                </button>
+                                <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden bg-gray-900 opacity-70 modal fixed inset-0 z-40 animated fadeIn faster" id="modal-id{{$loop->index}}-backdrop"></div>
+            @endforeach
         </div>
     </div>
 
     <div class="bg-fixed md:bg-cover hidden md:block bg-center h-128" style="background-image: url({{asset('images/banner-textil.png')}});"></div>
 
-    <!--Modal-->
-    
 
 @endsection
 
     @push('scripts')
+
         <script>
-            function add(id){
-                var openmodal = document.querySelectorAll('#modal-open'+id)
-                for (var i = 0; i < openmodal.length; i++) {
-                        toggleModal(id)
-                }
-            
-                const overlay = document.querySelector('#modal-overlay'+id)
-                toggleModal(id)
-
-                var closemodal = document.querySelectorAll('.modal-close')
-                for (var i = 0; i < closemodal.length; i++) {
-                    toggleModal(id)
-                }
-
-                document.onkeydown = function(evt) {
-                    evt = evt || window.event
-                    var isEscape = false
-                    if ("key" in evt) {
-                        isEscape = (evt.key === "Escape" || evt.key === "Esc")
-                    } else {
-                        isEscape = (evt.keyCode === 27)
-                    }
-                    if (isEscape && document.body.classList.contains('modal-active')) {
-                        toggleModal(id)
-                    }
-                };
-
-            }
-            function toggleModal (id) {
-                const body = document.querySelector('body')
-                const modal = document.querySelector('#modal'+id)
-                modal.classList.toggle('opacity-0')
-                modal.classList.toggle('pointer-events-none')
-                body.classList.toggle('modal-active')
+            function toggleModal(modalID){
+                document.getElementById(modalID).classList.toggle("hidden");
+                document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+                document.getElementById(modalID).classList.toggle("flex");
+                document.getElementById(modalID + "-backdrop").classList.toggle("flex");
             }
         </script>
     @endpush
