@@ -40,7 +40,7 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('Nebula')
+                    ->subject('APU')
                     ->from('tania.vanessa609@gmail.com', 'APU');
             });
             Mail::send(['html' => 'page.email.emailTextil'], [
@@ -67,7 +67,7 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('Nebula')
+                    ->subject('APU')
                     ->from('tania.vanessa609@gmail.com', 'APU');
             });
             Mail::send(['html' => 'page.email.emailContacto'], [
@@ -94,7 +94,7 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('Nebula')
+                    ->subject('APU')
                     ->from('tania.vanessa609@gmail.com', 'APU');
             });
             Mail::send(['html' => 'page.email.emailReserva'], [
