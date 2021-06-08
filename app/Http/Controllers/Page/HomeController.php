@@ -11,6 +11,7 @@ use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
+    protected $email="tania.vanessa609@gmail.com";
     public function home(){
         return view('page.index');
     }
@@ -31,13 +32,11 @@ class HomeController extends Controller
         return view('page.formulario');
     }
     public function cotizar(Request $request ){
-        $from = 'tania.vanessa609@gmail.com';
+        $from = $this->email;
         $nombre = $request->tNombre;
         $email = $request->tEmail;
         $producto=$request->tProducto;
-        $url=url()->previous();
-        $url2=explode('http://127.0.0.1:8000/',$url);    
-        $url3=str_replace('-', ' ', $url2[1]);
+        $url3=$this->getUrl();
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
@@ -60,13 +59,11 @@ class HomeController extends Controller
         }
     }
     public function contactForm(Request $request ){
-        $from = 'tania.vanessa609@gmail.com';
+        $from = $this->email;
         $nombre = $request->tNombre;
         $email = $request->tEmail;
         $mensaje=$request->tMensaje;
-        $url=url()->previous();
-        $url2=explode('http://127.0.0.1:8000/',$url);    
-        $url3=str_replace('-', ' ', $url2[1]);
+        $url3=$this->getUrl();
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
@@ -89,13 +86,11 @@ class HomeController extends Controller
         }
     }
     public function reservar(Request $request ){
-        $from = 'tania.vanessa609@gmail.com';
+        $from = $this->email;
         $nombre = $request->tNombre;
         $email = $request->tEmail;
         $date=date('d/m/Y', strtotime($request->tDate));
-        $url=url()->previous();
-        $url2=explode('http://127.0.0.1:8000/',$url);    
-        $url3=str_replace('-', ' ', $url2[1]);
+        $url3=$this->getUrl();
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
@@ -116,6 +111,11 @@ class HomeController extends Controller
         catch (Exception $e){
             return $e;
         }
+    }
+    public function getUrl(){
+        $url=url()->previous();
+        $url2=explode('http://127.0.0.1:8000/',$url);    
+        return $url3=str_replace('-', ' ', $url2[1]);
     }
     
 }
