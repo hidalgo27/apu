@@ -7,16 +7,16 @@
                 <a href="/"><img src="<?php echo e(asset('images/logo-apu.png')); ?>" alt="" class="w-60 mx-auto"></a>
             </div>
             <div class="flex justify-end p-8 invisible sm:visible">
-                <a href="#" target="_blank" class="mx-2">
+                <a href="https://web.facebook.com/cicapuantasaqa" target="_blank" class="mx-2">
                     <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
                 </a>
-                <a href="#" target="_blank" class="mx-2">
-                    <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>
-                </a>
-                <a href="#" target="_blank" class="mx-2">
+{{--                <a href="#" target="_blank" class="mx-2">--}}
+{{--                    <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>--}}
+{{--                </a>--}}
+                <a href="https://www.youtube.com/channel/UCvY1nlgzRfRgkB9EHUYCRyw" target="_blank" class="mx-2">
                     <i data-feather="youtube" class="text-gray-50" stroke-width="1"></i>
                 </a>
-                <a href="#" target="_blank" class="mx-2">
+                <a href="https://www.instagram.com/apuantasaqa/" target="_blank" class="mx-2">
                     <i data-feather="instagram" class="text-gray-50" stroke-width="1"></i>
                 </a>
             </div>

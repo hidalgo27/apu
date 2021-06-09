@@ -91,16 +91,16 @@
 
             {{--            <!-- footer -->--}}
                         <div class="absolute bottom-0 left-0  py-3  w-full flex  items-center">
-                            <a href="#" target="_blank" class="mx-2">
+                            <a href="https://web.facebook.com/cicapuantasaqa" target="_blank" class="mx-2">
                                 <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
                             </a>
-                            <a href="#" target="_blank" class="mx-2">
-                                <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>
-                            </a>
-                            <a href="#" target="_blank" class="mx-2">
+                            {{--                <a href="#" target="_blank" class="mx-2">--}}
+                            {{--                    <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>--}}
+                            {{--                </a>--}}
+                            <a href="https://www.youtube.com/channel/UCvY1nlgzRfRgkB9EHUYCRyw" target="_blank" class="mx-2">
                                 <i data-feather="youtube" class="text-gray-50" stroke-width="1"></i>
                             </a>
-                            <a href="#" target="_blank" class="mx-2">
+                            <a href="https://www.instagram.com/apuantasaqa/" target="_blank" class="mx-2">
                                 <i data-feather="instagram" class="text-gray-50" stroke-width="1"></i>
                             </a>
                         </div>
