@@ -11,7 +11,7 @@ use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
-    protected $email="tania.vanessa609@gmail.com";
+    protected $email="info@apuantasaqa.com";
     public function home(){
         return view('page.index');
     }
@@ -40,17 +40,17 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('APU')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->subject('APU ANTASAQA')
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             Mail::send(['html' => 'page.email.emailTextil'], [
                 'nombre' => $nombre,
                 'email' => $email,
                 'producto' =>$producto,
                 'url' =>$url3,],
-                function ($messaje) use ($from) { $messaje->to($from, 'APU')
+                function ($messaje) use ($from) { $messaje->to($from, 'APU ANTASAQA')
                     ->subject('APU - Formulario de Cotizar')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             return Redirect::to(URL::previous() . '#cotizar')->with('status', 'Registro satisfactorio.');
         }
@@ -67,17 +67,17 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('APU')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->subject('APU ANTASAQA')
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             Mail::send(['html' => 'page.email.emailContacto'], [
                 'nombre' => $nombre,
                 'email' => $email,
                 'url' =>$url3,
                 'mensaje' => $mensaje,],
-                function ($messaje) use ($from) { $messaje->to($from, 'APU')
+                function ($messaje) use ($from) { $messaje->to($from, 'APU ANTASAQA')
                     ->subject('APU - Formulario de Contacto')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             return Redirect::to(URL::previous() . "#contacto")->with('status', 'Registro satisfactorio.');
         }
@@ -94,17 +94,17 @@ class HomeController extends Controller
         try {
             Mail::send(['html' => 'page.email.emailCliente'], ['nombre' => $nombre],
                 function ($messaje) use ($email, $nombre) { $messaje->to($email, $nombre)
-                    ->subject('APU')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->subject('APU ANTASAQA')
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             Mail::send(['html' => 'page.email.emailReserva'], [
                 'nombre' => $nombre,
                 'email' => $email,
                 'url' =>$url3,
                 'date' => $date,],
-                function ($messaje) use ($from) { $messaje->to($from, 'APU')
+                function ($messaje) use ($from) { $messaje->to($from, 'APU ANTASAQA')
                     ->subject('APU - Formulario de Reserva')
-                    ->from('tania.vanessa609@gmail.com', 'APU');
+                    ->from('info@apuantasaqa.com', 'APU ANTASAQA');
             });
             return Redirect::to(URL::previous())->with('status', 'Registro satisfactorio.');
         }
@@ -114,8 +114,8 @@ class HomeController extends Controller
     }
     public function getUrl(){
         $url=url()->previous();
-        $url2=explode('http://127.0.0.1:8000/',$url);    
+        $url2=explode('http://apuantasaqa.com',$url);
         return $url3=str_replace('-', ' ', $url2[1]);
     }
-    
+
 }

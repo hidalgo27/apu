@@ -4,7 +4,7 @@
     <tr>
       <td>
         <p>
-          Gracias por contactarnos, un representante de NEBULA se comunicará con usted a la brevedad.
+          Gracias por contactarnos, un representante de APU ANTASAQA se comunicará con usted a la brevedad.
         </p>
       </td>
     </tr>
