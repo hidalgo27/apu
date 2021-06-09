@@ -54,11 +54,11 @@
 
         <h2 class="font-lusitana text-5xl text-center mb-6">Vara Pumayalli</h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
-            <div class="p-16 order-2 sm:order-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+            <div class="p-16 order-2 sm:order-1 md:order-2">
                 <p class="font-montserrat font-light tracking-tight leading-relaxed">heredero de un conocimiento amplio del arte textil; adquirido de padres a hijos, los cuales fueron profundizados en conocimiento a medida que pasaban los años en especial en los años 80 y 90. Ya con una amplia trayectoria en el arte textil de Chinchero; en los inicios del milenio, la familia Vara Pumayalli decide organizarse con mayor formalidad y toman la iniciativa de trabajar de manera organizada, con el fin de consolidar la preservación de la originalidad de este arte milenario, tomando en cuenta el diseño iconográfico así como la combinación de los colores originarios de Chinchero que son herencia invalorable de nuestros antepasados</p>
             </div>
-            <div>
+            <div class="md:order-2">
                 <img src="{{asset('images/apu3.jpg')}}" alt="" class="w-full">
             </div>
         </div>
@@ -183,10 +183,9 @@
                 </div>
                 <div class="md:w-2/5 relative">
                     <img src="{{asset('images/chicha/banner-chicha3.jpg')}}" alt="" class="h-full w-full object-cover">
-
-                    <div class="absolute bottom-0 h-full md:h-auto left-0 bg-primary bg-opacity-50 z-30 p-6 w-full text-gray-50">
+                    <div class="md:absolute md:bottom-0  md:h-auto md:left-0 md:bg-primary md:bg-opacity-50 z-30 p-6 w-full md:text-gray-50">
                         <p class="mb-8">En dicha  sala, los visitantes tendrán la oportunidad de  informarse sobre proceso completo de elaboración de la chicha así también los visitantes tendrán la opción de apreciar varios instrumentos de labor agrícola del hombre andino.</p>
-                        <a href="{{route('chicha')}}"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
+                        <a href="{{route('chicha')}}"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 md:text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
                     </div>
                 </div>
             </div>
