@@ -95,14 +95,14 @@
                 <span class="text-sm">(Esc)</span>
             </div>
 
-            <div class="modal-content py-4 text-left px-6">
+            <div class="modal-content text-left ">
                 <!--Title-->
                 <div class="p-5 mb-5 grid grid-cols-2 bg-secondary bg-opacity-90 flex justify-between items-center">
                     <div>
                         <p class="text-2xl font-bold text-white">Reservar</p>
                     </div>
                     <div class="modal-close cursor-pointer z-50 ">
-                        <svg class="fill-current text-black float-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <svg class="fill-current text-black float-right" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 18 18">
                             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                         </svg>
                     </div>
@@ -117,10 +117,10 @@
                         <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                     </div> 
                     <div class="relative w-full mb-5">
-                        <input type="date" name="tDate" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
+                        <input type="date" name="tDate" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                     </div> 
                     <div class="pb-3 text-center">
-                        <button type="submit" class="rounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        <button type="submit" class="rounded transition duration-500 transform hover:-translate-y-1 hover:scale-110 px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Reservar
                         </button>     
                     </div>

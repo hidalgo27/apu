@@ -154,7 +154,7 @@
     </div>
     <div class="bg-fixed md:bg-cover hidden md:block bg-center h-128" style="background-image: url({{asset('images/chicha/banner-chicha3.jpg')}})"></div>
     <!--Modal-->
-    <div class="modal opacity-0 pointer-events-none fixed w-full h-full z-40 top-0 left-0 flex items-center justify-center">
+    <div class="modal opacity-0 m-0 pointer-events-none fixed w-full h-full z-40 top-0 left-0 flex items-center justify-center">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 
         <div class="modal-container bg-white w-11/12 md:max-w-2xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
@@ -188,10 +188,10 @@
                         <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                     </div> 
                     <div class="relative w-full mb-5">
-                        <input type="date" name="tDate" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
+                        <input type="date" name="tDate" class=" font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                     </div> 
                     <div class="pb-3 text-center">
-                        <button type="submit" class="ounded  px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                        <button type="submit" class="rounded transition duration-500 transform hover:-translate-y-1 hover:scale-110 px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Reservar
                         </button>     
                     </div>
