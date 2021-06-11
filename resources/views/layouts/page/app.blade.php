@@ -8,7 +8,7 @@
     <title>Apu Antasaqa | Cusco</title>
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
 </head>
-<body>
+<body class="bg-yellow-50">
 <div id="app">
     <div class="fixed z-40 p-8">
         <button onclick="openModal(true)" class="rounded text-gray-50 focus:outline-none">
@@ -83,29 +83,27 @@
                     </div>
                     <div>
                         <a href="{{route('hospedaje')}}" class="text-sm bg-gray-900 p-3 rounded bg-opacity-30 border-primary hover:bg-opacity-50 transition duration-500">
-                            Hospedaje Rural
+                            Alojamiento Rural
                         </a>
                     </div>
                 </div>
             </div>
 
             {{--            <!-- footer -->--}}
-                        <div class="absolute bottom-0 left-0  py-3  w-full flex  items-center">
-                            <a href="https://web.facebook.com/cicapuantasaqa" target="_blank" class="mx-2">
-                                <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
-                            </a>
-                            {{--                <a href="#" target="_blank" class="mx-2">--}}
-                            {{--                    <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>--}}
-                            {{--                </a>--}}
-                            <a href="https://www.youtube.com/channel/UCvY1nlgzRfRgkB9EHUYCRyw" target="_blank" class="mx-2">
-                                <i data-feather="youtube" class="text-gray-50" stroke-width="1"></i>
-                            </a>
-                            <a href="https://www.instagram.com/apuantasaqa/" target="_blank" class="mx-2">
-                                <i data-feather="instagram" class="text-gray-50" stroke-width="1"></i>
-                            </a>
-                        </div>
-
-
+            <div class="absolute bottom-0 left-0  py-3  w-full flex  items-center">
+                <a href="https://web.facebook.com/cicapuantasaqa" target="_blank" class="mx-2">
+                    <i data-feather="facebook" class="text-gray-50" stroke-width="1"></i>
+                </a>
+                <a href="https://twitter.com/apuantasaqa" target="_blank" class="mx-2">
+                    <i data-feather="twitter" class="text-gray-50" stroke-width="1"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCvY1nlgzRfRgkB9EHUYCRyw" target="_blank" class="mx-2">
+                    <i data-feather="youtube" class="text-gray-50" stroke-width="1"></i>
+                </a>
+                <a href="https://www.instagram.com/apuantasaqa/" target="_blank" class="mx-2">
+                    <i data-feather="instagram" class="text-gray-50" stroke-width="1"></i>
+                </a>
+            </div>
 
         </div>
     </div>
@@ -126,7 +124,7 @@
                     <div class="md:w-1/2 order-2 md:order-1 md:py-5 z-30">
                         <img src="{{asset('images/textil.jpg')}}" alt="" class="h-full w-full md:rounded-lg object-cover">
                     </div>
-                    <div class="bg-white flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
+                    <div class="bg-gray-50 order-1 flex justify-end items-center md:w-1/2 -ml-36 md:shadow-lg md:rounded-lg border-primary hover:border-gray-50 transition duration-500">
                         <div class="w-9/12 p-12 text-center">
                             <h2 class="font-lusitana text-4xl mb-6 font-black">Formulario de Contacto</h2>
                             <form id="form font-lusitana" method="POST" action="{{route('contactForm')}}">
@@ -145,7 +143,6 @@
                                 </button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -154,8 +151,9 @@
 
     <footer class="relative bg-primary pt-6">
         <div class="bg-footer-texture bg-repeat-x h-6 bg-12 top-0 w-full z-30"></div>
-        <div class="container mx-auto text-center text-gray-50 py-3">
-            Copyright Nebula 2021 All Rights Reserved
+        <div class="container mx-auto text-gray-50 p-3 text-center">
+            <p><span class="font-bold">Administrador:</span> Fidel Vara Quispe tlf. 984911190 - <span class="font-bold">Operaciones:</span> Eleazar Vara Pumayalli tlf. 958123295</p>
+            <p class="text-xs mt-2">Copyright Nebula 2021 All Rights Reserved</p>
         </div>
     </footer>
 </div>
