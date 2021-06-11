@@ -61,7 +61,7 @@
                 <p class="font-montserrat font-light tracking-tight leading-relaxed">heredero de un conocimiento amplio del arte textil; adquirido de padres a hijos, los cuales fueron profundizados en conocimiento a medida que pasaban los años en especial en los años 80 y 90. Ya con una amplia trayectoria en el arte textil de Chinchero; en los inicios del milenio, la familia Vara Pumayalli decide organizarse con mayor formalidad y toman la iniciativa de trabajar de manera organizada, con el fin de consolidar la preservación de la originalidad de este arte milenario, tomando en cuenta el diseño iconográfico así como la combinación de los colores originarios de Chinchero que son herencia invalorable de nuestros antepasados</p>
             </div>
             <div class="md:order-2">
-                <img src="{{asset('images/apu3.jpg')}}" alt="" class="w-full">
+                <img src="{{asset('images/casa/casa4.jpg')}}" alt="" class="w-full">
             </div>
         </div>
 
