@@ -21,14 +21,17 @@
                 </a>
             </div>
         </div>
-        <div class="relative grid grid-cols-1 gap-12 place-items-center text-center justify-center text-white z-30">
+        <div class="relative grid grid-cols-1 gap-6 place-items-center text-center justify-center text-white z-30">
             <div>
                 <h1 class="text-4xl font-cinzel text-gray-50 sm:text-6xl">APU ANTASAQA</h1>
                 <h2 class="text-2xl font-cinzel text-gray-50 sm:text-2xl">Turismo Rural Comunitario</h2>
                 <h3 class="font-lusitana font-light text-gray-50">Chinchero - Cusco</h3>
             </div>
             <div>
-                <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
+                <a class="venobox" data-gall="myGallery" data-autoplay="true" data-vbtype="video" href="https://youtu.be/owe8tN8FaEw">
+                    <i data-feather="play-circle" class="text-gray-50 mx-auto" stroke-width="1" width="50" height="50"></i>
+                </a>
+{{--                <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>--}}
             </div>
         </div>
         <div class="relative z-30 p-5 flex justify-center">
@@ -293,3 +296,12 @@
 
     <div class="bg-fixed md:bg-cover hidden md:block bg-center h-128" style="background-image: url({{asset('images/hospedaje/hospedaje2.jpg')}})"></div>
 @endsection
+@push('scripts')
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.venobox').venobox();
+        });
+
+    </script>
+@endpush

@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Apu Antasaqa | Cusco</title>
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins.css')}}" rel="stylesheet">
 </head>
 <body class="bg-yellow-50">
 <div id="app">
@@ -158,11 +159,13 @@
     </footer>
 </div>
 <script src="{{asset('js/app.js')}}"></script>
-<script src="{{asset('js/plugins.js')}}"></script>
 @stack('scripts')
+<script src="{{asset('js/plugins.js')}}"></script>
 
 <script>
+
     feather.replace();
+
     const modal_overlay = document.querySelector('#modal_overlay');
     const modal = document.querySelector('#modal');
 
