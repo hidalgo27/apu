@@ -25,12 +25,12 @@
             <div>
                 <h1 class="text-4xl font-cinzel text-gray-50 sm:text-6xl">APU ANTASAQA</h1>
                 <h2 class="text-2xl font-cinzel text-gray-50 sm:text-2xl">Turismo Rural Comunitario</h2>
-                <h3 class="font-lusitana font-light text-gray-50">Chinchero - Cusco</h3>
             </div>
             <div>
                 <a class="venobox" data-gall="myGallery" data-autoplay="true" data-vbtype="video" href="https://youtu.be/owe8tN8FaEw">
-                    <i data-feather="play-circle" class="text-gray-50 mx-auto" stroke-width="1" width="50" height="50"></i>
+                    <i data-feather="play-circle" class="text-gray-50 mx-auto" stroke-width="1" width="70" height="70"></i>
                 </a>
+                <h3 class="font-lusitana font-light mt-2 text-gray-50">Chinchero - Cusco</h3>
 {{--                <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>--}}
             </div>
         </div>
