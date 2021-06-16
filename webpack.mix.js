@@ -18,7 +18,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
         require('autoprefixer'),
     ]);
-
+mix.postCss('resources/css/plugins.css', 'public/css');
 mix.scripts([
     'node_modules/feather-icons/dist/feather.js',
+    'node_modules/venobox/venobox/venobox.min.js',
 ], 'public/js/plugins.js');

@@ -57,7 +57,7 @@
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <img class="h-screen w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{asset('images/apu3.jpg')}}" alt="">
         </div>
-        
+
     </div>
 
 
@@ -67,7 +67,6 @@
             <div class="p-16">
                 <h2 class="font-lusitana text-gray-50 text-2xl mb-6">Casa Antigua a la Usanza Ancestral de Chinchero</h2>
                 <p class="font-montserrat font-light text-gray-50 mb-6 tracking-tight leading-relaxed">En otro ambiente, el visitante podrá apreciar una pequeña casa de infraestructura antigua al estilo del Ande. El cual mantiene una arquitectura esplendida de muchos años atrás. El día de hoy, esta construcción todavía mantiene su función tradicional de ser usada como una despensa familiar. La visita a este ambiente nos enseñara como el hombre del Ande almacena con las mismas técnicas ancestrales a fin de conservar refrigerada sus productos alimentarios por un periodo largo, para tal fin es utiliza algunos utensilios y vasijas de cerámica.</p>
-                <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
             </div>
             <div class="carousel relative shadow-2xl bg-white">
                 <div class="carousel-inner relative overflow-hidden">
@@ -169,14 +168,14 @@
                     </div>
                     <div class="relative w-full mb-5">
                         <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="relative w-full mb-5">
                         <input type="date" name="tDate" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="pb-3 text-center">
                         <button type="submit" class="rounded transition duration-500 transform hover:-translate-y-1 hover:scale-110 px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Reservar
-                        </button>     
+                        </button>
                     </div>
                 </form>
 

@@ -41,7 +41,7 @@
                 <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="sm:text-center lg:text-left py-24">
                         <h1 class="text-4xl mb-8 tracking-tight font-extrabold text-gray-50 sm:text-5xl md:text-6xl">
-                            <span class="block xl:inline">Hospedaje </span>
+                            <span class="block xl:inline">Alojamiento </span>
                             <span class="block text-indigo-600 xl:inline">Rural</span>
                         </h1>
                         <a href="#"  class="modal-open  px-12 py-3 text-xs font-bold bg-primary text-gray-50 tracking-wider border border-primary hover:bg-primary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
@@ -52,13 +52,13 @@
                         </a>
                     </div>
                 </main>
-                
+
             </div>
         </div>
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <img class="h-screen w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{asset('images/hospedaje/hospedaje1.jpg')}}" alt="">
         </div>
-        
+
     </div>
 
     <div class="md:py-12">
@@ -71,9 +71,6 @@
                     <div class="w-9/12 p-12">
                         <h2 class="font-lusitana text-2xl mb-6">Hospedaje Rural</h2>
                         <p class="font-montserrat mb-6 font-light tracking-tight leading-relaxed">Nuestro local cuenta con dos habitaciones acondicionadas para hospedaje, en un  lugar de ambiente agradable y tranquilo lejos del ruido de la ciudad. Dicho alojamiento presenta un estilo andino contemporáneo. Es ideal para personas que desean experimentar el Perú profundo en un ambiente rural. Check in 01:00 pm. Check out 09.00 am.</p>
-                        <a href="#"  class=" px-12 py-3 text-xs font-light tracking-wider border border-primary hover:bg-primary hover:bg-opacity-50 hover:text-gray-50 transition duration-500 text-primary focus:outline-none focus:ring-2 focus:ring-gray-500">
-                            Ver detalles
-                        </a>
                     </div>
                 </div>
             </div>
@@ -115,14 +112,14 @@
                     </div>
                     <div class="relative w-full mb-5">
                         <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="relative w-full mb-5">
                         <input type="date" name="tDate" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="pb-3 text-center">
                         <button type="submit" class="rounded transition duration-500 transform hover:-translate-y-1 hover:scale-110 px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Reservar
-                        </button>     
+                        </button>
                     </div>
                 </form>
             </div>

@@ -57,7 +57,7 @@
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <img class="h-screen w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{asset('images/chicha/banner-chicha3.jpg')}}" alt="">
         </div>
-        
+
     </div>
 
     <div class="md:py-12">
@@ -140,12 +140,10 @@
                     </div>
 
                 </div>
-                <div class=" md:w-2/5 relative">
+                <div class="md:w-2/5 relative">
                     <img src="{{asset('images/chicha/banner-chicha3.jpg')}}" alt="" class="h-full w-full object-cover">
-
-                    <div class="absolute bottom-0 h-full md:h-auto left-0 bg-primary bg-opacity-50 z-30 p-6 w-full text-gray-50">
-                        <p class="mb-8">En dicha  sala, los visitantes tendrán la oportunidad de  informarse sobre proceso completo de elaboración de la chicha así también los visitantes tendrán la opción de apreciar varios instrumentos de labor agrícola del hombre andino.</p>
-                        <a href="#"  class="px-12 py-3 text-xs font-light tracking-wider border border-gray-300 hover:bg-gray-200 hover:bg-opacity-5 transition duration-500 text-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-300">Explorar</a>
+                    <div class="md:absolute md:bottom-0  md:h-auto md:left-0 md:bg-primary md:bg-opacity-50 z-30 p-6 w-full md:text-gray-50">
+                        <p>En dicha  sala, los visitantes tendrán la oportunidad de  informarse sobre proceso completo de elaboración de la chicha así también los visitantes tendrán la opción de apreciar varios instrumentos de labor agrícola del hombre andino.</p>
                     </div>
                 </div>
             </div>
@@ -186,14 +184,14 @@
                     </div>
                     <div class="relative w-full mb-5">
                         <input type="email" name="tEmail" placeholder="Correo Electrónico" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="relative w-full mb-5">
                         <input type="date" name="tDate" class=" font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
-                    </div> 
+                    </div>
                     <div class="pb-3 text-center">
                         <button type="submit" class="rounded transition duration-500 transform hover:-translate-y-1 hover:scale-110 px-12 py-3 text-xs font-light bg-secondary text-gray-50 tracking-wider border border-secondary hover:bg-secondary hover:bg-opacity-80 hover:text-gray-50 transition duration-500 focus:outline-none focus:ring-2 focus:ring-gray-500">
                             Reservar
-                        </button>     
+                        </button>
                     </div>
                 </form>
 
