@@ -126,7 +126,6 @@
                             <form id="form font-lusitana" method="POST" action="{{route('cotizar')}}" class="mx-10">
                                 @csrf
                                 <input type="hidden" name="tProducto" value="{{$item[0]}}">
-                                <input type="hidden" name="tProductoImagen" value="{{$item[1]}}">
                                 <div class="relative w-full mb-5 ">
                                     <input type="text" name="tNombre" placeholder="Nombre" class="font-medium p-3 block w-full mt-0 bg-transparent border-2 focus:outline-none border-gray-200 rounded-lg" required/>
                                 </div>
