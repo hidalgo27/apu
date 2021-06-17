@@ -31,7 +31,7 @@ class HomeController extends Controller
             ['Chalina','images/textil/productos/chalina2.jpeg'],
             ['Cojín','images/textil/productos/cojin.jpeg'],
             ['Cartuchera de Cosmético','images/textil/productos/cosmetico.jpeg'],
-            ['Individual','images/textil/productos/individual.jpeg'],
+            ['Individual','images/textil/productos/individual2.jpeg'],
             ['Mochila','images/textil/productos/mochila.jpeg'],
             ['Monederos','images/textil/productos/monederos.jpeg'],
             ['Monederos','images/textil/productos/monederos2.jpeg'],
