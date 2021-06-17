@@ -16,7 +16,28 @@ class HomeController extends Controller
         return view('page.index');
     }
     public function textil(){
-        $collection=collect([['Barbijo inca','images/chicha/p1.jpg'],['Barbijo inca2','images/chicha/p2.jpg'],['Barbijo inca3','images/chicha/p3.jpg']]);
+        $collection=collect([
+            ['Barbijo','images/textil/productos/barbijo.jpeg'],
+            ['Barbijo','images/textil/productos/barbijo2.jpeg'],
+            ['Barbijo','images/textil/productos/barbijo3.jpeg'],
+            ['Bolsa de mano','images/textil/productos/bolsa-de-mano.jpeg'],
+            ['Bolsa de mano','images/textil/productos/bolsa-de-mano2.jpeg'],
+            ['Cartera','images/textil/productos/cartera.jpeg'],
+            ['Cartuchera','images/textil/productos/cartuchera.jpeg'],
+            ['Cartuchera','images/textil/productos/cartuchera2.jpeg'],
+            ['Cartuchera','images/textil/productos/cartuchera3.jpeg'],
+            ['Cartuchera','images/textil/productos/cartuchera4.jpeg'],
+            ['Chalina','images/textil/productos/chalina.jpeg'],
+            ['Chalina','images/textil/productos/chalina2.jpeg'],
+            ['Cojín','images/textil/productos/cojin.jpeg'],
+            ['Cartuchera de Cosmético','images/textil/productos/cosmetico.jpeg'],
+            ['Individual','images/textil/productos/individual.jpeg'],
+            ['Mochila','images/textil/productos/mochila.jpeg'],
+            ['Monederos','images/textil/productos/monederos.jpeg'],
+            ['Monederos','images/textil/productos/monederos2.jpeg'],
+            ['Porta celular','images/textil/productos/porta-celular.jpeg'],
+            ['Porta celular','images/textil/productos/porta-celular2.jpeg']
+        ]);
         return view('page.textil', compact('collection'));
     }
     public function chicha(){
